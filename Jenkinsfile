@@ -15,7 +15,7 @@ pipeline {
         stage('Packer image') {
             steps {
                 echo 'Building image through packer..'
-                sh 'packer build ubuntu-build.json'
+                sh 'packer build sample-build.json'
 
                 
             }
