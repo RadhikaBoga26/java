@@ -1,0 +1,27 @@
+---
+- name: Install and configure CloudWatch Agent
+  hosts: localhost
+  become: yes
+  gather_facts: yes
+
+  tasks:
+    - name: Download CloudWatch Agent package
+      get_url:
+        url: https://s3.amazonaws.com/amazoncloudwatch-agent/linux/amd64/latest/AmazonCloudWatchAgent.zip
+        dest: /tmp/AmazonCloudWatchAgent.zip
+
+    - name: Unzip the CloudWatch Agent package
+      ansible.builtin.unarchive:
+        src: /tmp/AmazonCloudWatchAgent.zip
+        dest: /tmp/
+
+    - name: Install the CloudWatch Agent
+      command: "sudo /tmp/install.sh"
+      args:
+        chdir: /tmp
+
+    - name: Start the CloudWatch Agent service
+      systemd:
+        name: amazon-cloudwatch-agent
+        enabled: yes
+        state: started
