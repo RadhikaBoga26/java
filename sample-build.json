@@ -1,29 +1,14 @@
 {
-    "variables": {
-        "aws_access_key": "AKIAX7OFUOFIIT3LK4O2",
-        "aws_secret_key": "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",
-        "ami_name": "packer-ami",
-        "aws_region": "us-east-1",
-        "ssh_username": "ec2-user",
-        "vpc_id": "vpc-0c1009356d4ffb883",
-        "subnet_id": "subnet-0c8a6a5827c310079"
-    },
-    "builders": [{
-        "type": "amazon-ebs",
-        "access_key": "{{user `aws_access_key`}}",
-        "secret_key": "{{user `aws_secret_key`}}",
-        "region": "{{user `aws_region`}}",
-        "instance_type": "t2.small",
-        "force_deregister": true,
-        "ssh_username": "{{user `ssh_username`}}",
-        "communicator": "ssh",
-        "associate_public_ip_address": true,
-        "subnet_id": "{{user `subnet_id`}}",
-        "ami_name": "{{user `ami_name`}}",
-        "source_ami": "ami-04cb4ca688797756f"
-        "ssh_private_key_file": "LaptopKey.pem"
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "region": "us-east-1",
+      "source_ami": "ami-04cb4ca688797756f",
+      "instance_type": "t2.micro",
+      "ssh_username": "ec2-user",
+      "ami_name": "my-amazon-linux-ami {{timestamp}}"
     }
-],
+  ],
 "provisioners": [
   {
     "type": "shell",
