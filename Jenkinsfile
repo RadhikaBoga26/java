@@ -15,7 +15,11 @@ pipeline {
         stage('Packer image') {
             steps {
                 echo 'Building image through packer..'
+<<<<<<< HEAD
                 sh 'packer build ubuntu-build.json'
+=======
+                sh 'packer build -var=aws_access_key=AKIAX7OFUOFIIT3LK4O2 -var=aws_secret_key=X4rFxco4/8LFBHk+8Ux0kjgIOevYKQaRl2yJmwut sample-build.json'
+>>>>>>> e0060909f7a25a57c19ddcf17d1dceccb5cc5c69
                 
             }
         }
