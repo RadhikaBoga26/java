@@ -8,7 +8,7 @@
         "type": "amazon-ebs",
         "access_key": "{{user `aws_access_key`}}",
         "secret_key": "{{user `aws_secret_key`}}",
-        "aws_region": "us-east-1",
+        "region": "us-east-1",
         "instance_type": "t2.micro",
         "force_deregister": "true",
         "ssh_username": "ubuntu",
