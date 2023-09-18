@@ -1,35 +1,31 @@
 {
-    "variables": {
-        "aws_access_key": "AKIAX7OFUOFIIT3LK4O2",
-        "aws_secret_key": "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"   
-        
-    },
-    "builders": [{
-        "type": "amazon-ebs",
-        "access_key": "{{user `aws_access_key`}}",
-        "secret_key": "{{user `aws_secret_key`}}",
-        "region": "us-east-1",
-        "source_ami": "ami-0f844a9675b22ea32",
-        "instance_type": "t2.micro",
-        "ssh_username": "ec2-user",
-        "ami_name": "packer-ami",
-        "communicator": "ssh",
-        "vpc_id": "vpc-0c1009356d4ffb883",
-        "subnet_id": "subnet-0c8a6a5827c310079"   
+  "variables": {
+      "aws_access_key": "AKIAX7OFUOFIIT3LK4O2",
+      "aws_secret_key": "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"   
+      
+  },
+  "builders": [{
+      "type": "amazon-ebs",
+      "access_key": "{{user `aws_access_key`}}",
+      "secret_key": "{{user `aws_secret_key`}}",
+      "region": "us-east-1",
+      "source_ami": "ami-053b0d53c279acc90",
+      "instance_type": "t2.micro",
+      "ssh_username": "ubuntu",
+      "ami_name": "packer-ami",
+      "communicator": "ssh",
+      "vpc_id": "vpc-0c1009356d4ffb883",
+      "subnet_id": "subnet-0c8a6a5827c310079"   
 
-    }
+  }
 ],
 "provisioners": [
-  {
-    "type": "shell",
-    "inline": [
-      "sudo dnf install nginx -y"
-    ]
-  }
+{
+  "type": "shell",
+  "inline": [
+    "sudo apt update",
+    "sudo apt install nginx"
+  ]
+}
 ]
 }
-
-
-
-
-
