@@ -9,10 +9,11 @@
         "access_key": "{{user `aws_access_key`}}",
         "secret_key": "{{user `aws_secret_key`}}",
         "region": "us-east-1",
-        "source_ami": "ami-04cb4ca688797756f",
+        "source_ami": "ami-0f844a9675b22ea32",
         "instance_type": "t2.micro",
         "ssh_username": "ec2-user",
         "ami_name": "packer-ami",
+        "communicator": "ssh",
         "vpc_id": "vpc-0c1009356d4ffb883",
         "subnet_id": "subnet-0c8a6a5827c310079"   
 
