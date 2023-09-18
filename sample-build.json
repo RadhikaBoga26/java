@@ -13,7 +13,6 @@
         "instance_type": "t2.micro",
         "ssh_username": "ec2-user",
         "ami_name": "packer-ami",
-        "communicator": "ssh",
         "vpc_id": "vpc-0c1009356d4ffb883",
         "subnet_id": "subnet-0c8a6a5827c310079"   
 
