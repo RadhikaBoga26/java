@@ -1,8 +1,5 @@
 #!/bin/bash
 echo "Hello World"
-
-echo "Hello World"
-
-echo "Hello World"
-echo "Hi"
 echo "Good evening!!!!"
+sudo amazon-linux-extras install nginx1.12
+sudo systemctl enable nginx
