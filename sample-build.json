@@ -23,7 +23,8 @@
   {
     "type": "shell",
     "inline": [
-      "echo 'Hello, World!'"
+      "sudo yum update -y",
+      "sudo yum install nginx -y"
     ]
   }
 ]
